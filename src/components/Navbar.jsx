@@ -37,7 +37,7 @@ export function Navbar() {
           </div>
         </div>
         <div className="w-[48%] lg:flex-1 flex justify-end items-center gap-4 lg:gap-8">
-          <button className="hidden lg:block px-2 py-2 border-2 rounded-[8px] border-blue-500 text-blue-500">
+          <button className="hidden lg:block px-2 py-2 border-2 rounded-[8px] bg-[#F0F2F5] border-blue-500 text-blue-500">
             <p className="text-base font-normal">Login</p>
           </button>
           <button className=" px-2 py-2 lg:border-2 rounded-[8px] bg-blue-500 border-blue-500 text-white">
