@@ -17,7 +17,7 @@ export function Navbar() {
   return (
     <>
       <Container className="bg-white">
-        <div className="flex-1 flex justify-between">
+        <div className="flex-1 flex justify-between items-start">
           <div className="lg:hidden">
             <Menu
               width={280}
