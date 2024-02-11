@@ -87,7 +87,7 @@ export function RegisterCleanerModal({onModalChange}) {
           />
         </div>
   
-        <button className={" py-2 rounded-lg bg-orange-500"}>
+        <button onClick={()=>{onModalChange(4)}} className={" py-2 rounded-lg bg-orange-500"}>
           <div className="flex items-center justify-center gap-2 text-white">
             <img src={user} alt="" className="w-5 h-5 object-contain" />
             <p>Register</p>
@@ -186,7 +186,7 @@ export function RegisterCleanerModal({onModalChange}) {
           />
         </div>
   
-        <button className={" py-2 rounded-lg bg-blue-500"}>
+        <button onClick={()=>{onModalChange(4)}} className={" py-2 rounded-lg bg-blue-500"}>
           <div className="flex items-center justify-center gap-2 text-white">
             <img src={user} alt="" className="w-3 h-3 object-contain" />
             <p>Register</p>
@@ -201,14 +201,14 @@ export function RegisterCleanerModal({onModalChange}) {
     );
   }
   
-  function RegistrationSuccesModal() {
+  export function RegistrationSuccesModal({onModalChange}) {
     return (
       <div className="flex flex-col gap-10 p-6 rounded-[8px] bg-white">
         <h1 className=" font-semibold text-2xl text-blue-500 text-center">
           Registration was successful
         </h1>
   
-        <button className={" py-2 rounded-lg bg-blue-500"}>
+        <button onClick={()=>{onModalChange(3)}} className={" py-2 rounded-lg bg-blue-500"}>
           <div className="flex items-center justify-center gap-2 text-white">
             <p>Sign In</p>
           </div>

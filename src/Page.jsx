@@ -3,12 +3,11 @@ import { Navbar } from "./components/Navbar";
 import { Container } from "./components/Container";
 import { Background } from "./components/Background";
 import { SignIn } from "./components/SignIn";
-import { RegisterCleanerModal, RegisterUserModal } from "./components/Registration";
+import { RegisterCleanerModal, RegisterUserModal, RegistrationSuccesModal } from "./components/Registration";
 
 
 import star_user from "./assets/star_user.png";
 import cleaning_icon from "./assets/cleaning_icon.png";
-
 import user from "./assets/user_icon.png";
 
 
@@ -41,7 +40,10 @@ export function Page() {
     );
   } else if (modalNumber == 3) {
     modal = <SignIn />;
-  } else {
+  } else if(modalNumber == 4){
+    modal = <RegistrationSuccesModal onModalChange={modalHandler} />
+  }
+   else {
     modal = " ";
   }
 
@@ -53,7 +55,7 @@ export function Page() {
       >
         <Background />
 
-        {modalNumber != 3 ? (
+        {modalNumber != 3 && modalNumber != 4 ? (
           <div
             className={
               modalNumber != 0

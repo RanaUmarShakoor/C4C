@@ -10,6 +10,7 @@ export function FormInput({ label, type, placeholder, color = 1 }) {
       <input
         type={type}
         placeholder={placeholder}
+        // required
         className={"px-4 py-2  border-[1px] rounded-md " + border}
       />
     </div>
