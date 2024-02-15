@@ -12,6 +12,9 @@ import "@fontsource/montserrat/700.css";
 import "@fontsource/montserrat/800.css";
 import "@fontsource/montserrat/900.css";
 
+import "@fontsource/prompt/400.css";
+import "@fontsource/prompt/500.css";
+
 import './App.css';
 
 function App() {
