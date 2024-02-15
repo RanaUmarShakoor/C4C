@@ -17,7 +17,7 @@ export function Page4() {
 
   return (
     <main className="w-screen h-screen flex flex-col">
-      <Navbar type={1} />
+      <Navbar type={2} />
       <Container className="flex-1 flex items-center justify-center relative z-0">
         <BackgroundBlue />
         <section className="xxs:w-[90%] xs:w-[400px] md:w-auto flex items-center relative">
