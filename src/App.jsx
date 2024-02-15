@@ -1,4 +1,6 @@
 import { Page } from "./Page"
+import { Page2 } from "./Page2"
+
 
 import "@fontsource/montserrat/100.css";
 import "@fontsource/montserrat/200.css";
@@ -17,7 +19,8 @@ function App() {
 
   return (
     <>
-      <Page />
+      {/* <Page /> */}
+      <Page2 />
     </>
   )
 }
