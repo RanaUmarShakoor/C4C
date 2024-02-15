@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Navbar } from "../components/Navbar";
 import { Container } from "../components/Container";
-import { BackgroundOrange } from "../components/Background";
+import { BackgroundBlue } from "../components/Background";
 import { CleaningDropdown } from "../components/CleaningDropdown";
-import star_user from "./../assets/star_user.png";
 
-
+import cleaning_icon from "./../assets/cleaning_icon.png";
 import arrow_left_icon from "./../assets/arrow_left_icon.png";
 
-export function Page3() {
+
+export function Page4() {
   const [isOpen, setIsOpen] = useState(false);
 
   function buttonController() {
@@ -19,14 +19,14 @@ export function Page3() {
     <main className="w-screen h-screen flex flex-col">
       <Navbar type={1} />
       <Container className="flex-1 flex items-center justify-center relative z-0">
-        <BackgroundOrange />
+        <BackgroundBlue />
         <section className="xxs:w-[90%] xs:w-[400px] md:w-auto flex items-center relative">
           <Block
-            photo={star_user}
-            heading="I offer cleaning"
+            photo={cleaning_icon}
+            heading="I am looking cleaning"
             name="Olivia Rhye"
             distance="15"
-            type={1}
+            type={2}
             onAction={buttonController}
           />
         </section>
@@ -34,7 +34,7 @@ export function Page3() {
           style={{ fontFamily: "Prompt" }}
           className={`absolute bottom-4 ${
             isOpen ? "hidden" : "flex"
-          } items-center gap-1 px-4 py-2 border-[1px] border-orange-500 rounded-lg bg-white`}
+          } items-center gap-1 px-4 py-2 border-[1px] border-blue-500 rounded-lg bg-white`}
         >
           <img src={arrow_left_icon} alt="" className="h-5 object-contain" />
           <p>Back</p>
@@ -62,7 +62,7 @@ function Block({ photo, heading, name, distance, type = 1, onAction }) {
         <button
           style={{ fontFamily: "Prompt" }}
           className={
-            "w-[330px] hidden md:flex justify-between px-4 py-2 border-[1.5px] border-orange-500 rounded-lg bg-white text-black shadow-customOrange"
+            "w-[330px] hidden md:flex justify-between px-4 py-2 border-[1.5px] border-blue-500 rounded-lg bg-white text-black shadow-customBlue"
           }
         >
           <h4 className={"font-normal text-sm md:text-base"}>{name}</h4>
@@ -70,7 +70,7 @@ function Block({ photo, heading, name, distance, type = 1, onAction }) {
             {distance} <span className="text-[grey]">km</span>
           </h6>
         </button>
-        <CleaningDropdown type={1} onDropChange={onAction} />
+        <CleaningDropdown type={2} onDropChange={onAction} />
         <div className="hidden lg:flex justify-center">
           <button
             className={

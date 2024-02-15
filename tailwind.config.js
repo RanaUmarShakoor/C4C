@@ -19,6 +19,7 @@ export default {
       },
       boxShadow: {
         customOrange: '0px 0px 0px 4px rgba(255, 165, 0, 0.5)',
+        customBlue: '0px 0px 0px 4px rgba(0, 112, 255, 0.5)',
       },
       screens: {
         'xs': '475px',
