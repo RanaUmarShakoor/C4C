@@ -44,7 +44,7 @@ function Block({ photo, heading, name, distance, type = 1 }) {
   }
 
   return (
-    <div className="flex-1 flex flex-col items-center gap-6 py-6 lg:py-5 px-2 md::px-4 rounded-[8px] text-white text-center bg-[#00000080] ">
+    <div className="flex-1 flex flex-col items-center gap-6 py-6 lg:py-5 px-2 md:px-4 rounded-[8px] text-white text-center bg-[#00000080] ">
       <div className={"p-5 rounded-full" + background}>
         <img src={photo} alt="" className="h-12 w-12 object-contain" />
       </div>
@@ -53,8 +53,11 @@ function Block({ photo, heading, name, distance, type = 1 }) {
       </h3>
       <div className="flex flex-col gap-6 mt-auto">
         <button
+          style={{
+            boxShadow: "0px 0px 0px 4px #FFA50080",
+          }}
           className={
-            "lg:w-[330px] flex justify-between px-4 py-2 border-[1.5px] border-orange-500 rounded-lg bg-white text-black shadow-[#FFA50080] shadow-inner"
+            "lg:w-[330px] flex justify-between px-4 py-2 border-[1.5px] border-orange-500 rounded-lg bg-white text-black"
           }
         >
           <h4 className={"font-normal text-sm md:text-base "}>{name}</h4>
