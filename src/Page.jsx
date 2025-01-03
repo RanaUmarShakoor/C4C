@@ -1,18 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navbar } from "./components/Navbar";
 import { Container } from "./components/Container";
 import { Background } from "./components/Background";
 import { SignIn } from "./components/SignIn";
-import { RegisterCleanerModal, RegisterUserModal, RegistrationSuccesModal } from "./components/Registration";
-
+import {
+  RegisterCleanerModal,
+  RegisterUserModal,
+  RegistrationSuccesModal,
+} from "./components/Registration";
 
 import star_user from "./assets/star_user.png";
 import cleaning_icon from "./assets/cleaning_icon.png";
 import user from "./assets/user_icon.png";
-
+import { useSearchParams } from "react-router-dom";
+import { ChangePasswordModal } from "pages/Modals-New/ChangePassword";
 
 export function Page() {
-  const [modalNumber, setModalNumber] = useState(0);
+  const [params] = useSearchParams();
+
+  const paramModalNumer = params.has("modalNumber")
+    ? +params.get("modalNumber")
+    : 0;
+
+  const [modalNumber, setModalNumber] = useState(paramModalNumer);
+
+  useEffect(() => {
+    setModalNumber(paramModalNumer);
+  }, [paramModalNumer]);
 
   function modalHandler(number) {
     setModalNumber(number);
@@ -26,7 +40,7 @@ export function Page() {
         <div className="flex-1 flex justify-center lg:justify-end lg:pe-12 relative">
           <RegisterCleanerModal onModalChange={modalHandler} />
         </div>
-        <div className="flex-1 hidden lg:block h-1 relative -z-30"/>
+        <div className="flex-1 hidden lg:block h-1 relative -z-30" />
       </div>
     );
   } else if (modalNumber == 2) {
@@ -40,22 +54,23 @@ export function Page() {
     );
   } else if (modalNumber == 3) {
     modal = <SignIn />;
-  } else if(modalNumber == 4){
-    modal = <RegistrationSuccesModal onModalChange={modalHandler} />
-  }
-   else {
+  } else if (modalNumber == 4) {
+    modal = <RegistrationSuccesModal onModalChange={modalHandler} />;
+  } else if ([5,6].includes(modalNumber)) {
+    // 5 = orange
+    // 6 = blue
+    modal = <ChangePasswordModal color={modalNumber - 4} />
+  } else {
     modal = " ";
   }
 
   return (
     <main className="w-screen h-screen flex flex-col">
       <Navbar />
-      <Container
-        className="flex-1 flex items-center justify-center relative z-0"
-      >
+      <Container className="flex-1 flex items-center justify-center relative z-0">
         <Background />
 
-        {modalNumber != 3 && modalNumber != 4 ? (
+        {(!modalNumber || [1, 2].includes(modalNumber)) && (
           <div
             className={
               modalNumber != 0
@@ -78,8 +93,6 @@ export function Page() {
               onModalChange={modalHandler}
             />
           </div>
-        ) : (
-          ""
         )}
         {modal}
       </Container>
@@ -108,21 +121,22 @@ function Block({ photo, heading, subheading, type = 1, onModalChange }) {
       <h3 className="font-semibold text-2xl md:text-3xl lg:text-4xl">
         {heading}
       </h3>
-      <div className="flex flex-col gap-6 mt-auto">
-        <button onClick={clickHandler} className={"hover:" + textColor}>
-          <h4 className={"font-semibold text-base md:text-xl lg:text-2xl"}>
-            {subheading}
-          </h4>
-        </button>
+      <div className="flex flex-col gap-6 mt-auto max-md:self-stretch">
+        <h4 className={"font-semibold text-base md:text-xl lg:text-2xl"}>
+          {subheading}
+        </h4>
         <button
           onClick={() => {
-            onModalChange(3);
+            // onModalChange(3);
+            clickHandler();
           }}
-          className={" py-2 rounded-lg" + background}
+          className={
+            "md:self-center px-4 md:px-16 lg:px-20 py-2 rounded-lg" + background
+          }
         >
           <div className="flex items-center justify-center gap-2 text-white">
             <img src={user} alt="" className="w-5 h-5 object-contain" />
-            <p>Sign In</p>
+            <p>Register</p>
           </div>
         </button>
       </div>

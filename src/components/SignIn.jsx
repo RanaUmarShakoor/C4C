@@ -91,7 +91,7 @@ function ForgottenPasswordModal_1({onModalChange}) {
           <p>Send Verification code</p>
         </div>
       </button>
-      <button onClick={()=>{onModalChange(0)}} className=" font-medium text-orange-500 underline text-center">
+      <button onClick={()=>{onModalChange(0)}} className=" font-medium text-blue-500 underline text-center">
         Back
       </button>
     </div>
@@ -122,7 +122,7 @@ function ForgottenPasswordModal_2({onModalChange}) {
         </button>
         <button
           onClick={()=>{onModalChange(1)}}
-          className=" font-medium text-orange-500 underline text-center"
+          className=" font-medium text-blue-500 underline text-center"
         >
           Back
         </button>
@@ -155,7 +155,7 @@ function ForgottenPasswordModal_3({onModalChange}) {
           <p>Change password</p>
         </div>
       </button>
-      <button onClick={()=>{onModalChange(2)}} className=" font-medium text-orange-500 underline text-center">
+      <button onClick={()=>{onModalChange(2)}} className=" font-medium text-blue-500 underline text-center">
         Back
       </button>
     </div>

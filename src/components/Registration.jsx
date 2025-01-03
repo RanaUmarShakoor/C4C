@@ -13,7 +13,7 @@ import info_icon from "./../assets/info_icon.png";
 
 export function RegisterCleanerModal({onModalChange}) {
     return (
-      <div className="flex flex-col gap-4 p-6 rounded-[8px] bg-white absolute z-50 top-[50%] -translate-y-[50%] text-black">
+      <div className="flex flex-col gap-4 p-6 rounded-[8px] bg-white absolute z-50 top-[50%] -translate-y-[50%] text-black overflow-y-auto max-h-[90vh]">
         <div className="hidden lg:flex justify-center">
           <div className={"p-3 rounded-full bg-orange-500"}>
             <img src={star_user} alt="" className="h-10 w-10 object-contain" />
@@ -41,7 +41,7 @@ export function RegisterCleanerModal({onModalChange}) {
             </div>
           </button>
         </div>
-  
+
         <div className="flex flex-col gap-2">
           <Checkbox
             checked={false}
@@ -86,7 +86,7 @@ export function RegisterCleanerModal({onModalChange}) {
             label="I agree to the sending of marketing news"
           />
         </div>
-  
+
         <button onClick={()=>{onModalChange(4)}} className={" py-2 rounded-lg bg-orange-500"}>
           <div className="flex items-center justify-center gap-2 text-white">
             <img src={user} alt="" className="w-5 h-5 object-contain" />
@@ -101,10 +101,10 @@ export function RegisterCleanerModal({onModalChange}) {
       </div>
     );
   }
-  
+
   export function RegisterUserModal({onModalChange}) {
     return (
-      <div className="flex flex-col gap-4 p-6 rounded-[8px] bg-white">
+      <div className="flex flex-col gap-4 p-6 rounded-[8px] bg-white overflow-y-auto max-h-[90vh]">
         <div className="hidden lg:flex justify-center">
           <div className={"p-3 rounded-full bg-blue-500"}>
             <img
@@ -140,7 +140,7 @@ export function RegisterCleanerModal({onModalChange}) {
           placeholder="0900 000 000"
           color={2}
         />
-  
+
         <div className="flex flex-col gap-2">
           <Checkbox
             checked={false}
@@ -185,7 +185,7 @@ export function RegisterCleanerModal({onModalChange}) {
             label="I agree to the sending of marketing news"
           />
         </div>
-  
+
         <button onClick={()=>{onModalChange(4)}} className={" py-2 rounded-lg bg-blue-500"}>
           <div className="flex items-center justify-center gap-2 text-white">
             <img src={user} alt="" className="w-3 h-3 object-contain" />
@@ -200,14 +200,14 @@ export function RegisterCleanerModal({onModalChange}) {
       </div>
     );
   }
-  
+
   export function RegistrationSuccesModal({onModalChange}) {
     return (
       <div className="flex flex-col gap-10 p-6 rounded-[8px] bg-white">
         <h1 className=" font-semibold text-2xl text-blue-500 text-center">
           Registration was successful
         </h1>
-  
+
         <button onClick={()=>{onModalChange(3)}} className={" py-2 rounded-lg bg-blue-500"}>
           <div className="flex items-center justify-center gap-2 text-white">
             <p>Sign In</p>
@@ -216,4 +216,3 @@ export function RegisterCleanerModal({onModalChange}) {
       </div>
     );
   }
-  

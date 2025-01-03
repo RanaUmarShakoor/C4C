@@ -2,6 +2,7 @@ import user from "./../assets/user_icon.png";
 import logo from "./../assets/logo.png";
 import insta_logo from "./../assets/insta_logo.png";
 import fb_logo from "./../assets/fb_logo.png";
+import { Link } from "react-router-dom";
 
 export function Footer() {
   let h3class = "font-medium text-xl";
@@ -15,8 +16,8 @@ export function Footer() {
       <section className="flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-16">
         <div className="order-2 lg:order-1 w-full lg:w-auto flex-1 flex flex-col items-center lg:items-start gap-2">
           <h3 className="font-medium text-xl">Quick Links</h3>
-          <button className={textclass}>I am looking for cleaning</button>
-          <button className={textclass}>I offer cleaning</button>
+          <Link to="/four" className={textclass}>I am looking for cleaning</Link>
+          <Link to="/three" className={textclass}>I offer cleaning</Link>
         </div>
         <div className="order-1 lg:order-2 w-full lg:w-auto flex-1 flex flex-col items-center lg:items-start gap-2">
           <h3 className={h3class}>Informations:</h3>
@@ -25,11 +26,11 @@ export function Footer() {
             <p className="underline">
               Click4clenarer s.r.o.
               <br />
-              Vajnorská 100
+              Karpatské námestie 7770/10A
               <br />
-              82102 Bratislava
+              83106 Bratislava
             </p>
-            <p className="underline">IČO: 123456</p>
+            <p className="underline">IČO: 56119585</p>
             <p className="underline">DIČ: 123456</p>
           </div>
         </div>
@@ -38,19 +39,19 @@ export function Footer() {
           <p className={textclass}>
             Mobile number
             <br />
-            <span className="underline text-[#0094FF] lg:text-[#33333380]">
+            <a href="tel:0900998000" className="underline text-[#0094FF] lg:text-[#33333380]">
               0900 998 000
-            </span>
+            </a>
           </p>
           <p className={textclass}>
             E-mail
             <br />
-            <span className="underline text-[#0094FF] lg:text-[#33333380]">
+            <a href="mailto:info@click4cleaner.sk" className="underline text-[#0094FF] lg:text-[#33333380]">
               info@click4cleaner.sk
-            </span>
+            </a>
           </p>
         </div>
-        <div className="order-3 lg:order-4 w-full lg:w-[27%] flex flex-col items-center lg:items-start gap-3 p-8 bg-blue-100">
+        <div className="order-3 lg:order-4 w-full lg:w-[27%] flex flex-col items-center lg:items-start gap-3 p-8 bg-[#F4F9FF]">
           <h3 className={h3class}>Registration</h3>
           <button className="px-2 xl:px-4 py-2 rounded-lg bg-[#0094FF]">
             <div className="flex items-center justify-center gap-2 xl:gap-3 text-white">

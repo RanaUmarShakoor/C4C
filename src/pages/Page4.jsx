@@ -6,7 +6,7 @@ import { CleaningDropdown } from "../components/CleaningDropdown";
 
 import cleaning_icon from "./../assets/cleaning_icon.png";
 import arrow_left_icon from "./../assets/arrow_left_icon.png";
-
+import { Link } from "react-router-dom";
 
 export function Page4() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,14 +23,15 @@ export function Page4() {
         <section className="xxs:w-[90%] xs:w-[400px] md:w-auto flex items-center relative">
           <Block
             photo={cleaning_icon}
-            heading="I am looking cleaning"
+            heading="I am looking for cleaning"
             name="Olivia Rhye"
             distance="15"
             type={2}
             onAction={buttonController}
           />
         </section>
-        <button
+        <Link
+          to="/two"
           style={{ fontFamily: "Prompt" }}
           className={`absolute bottom-4 ${
             isOpen ? "hidden" : "flex"
@@ -38,7 +39,7 @@ export function Page4() {
         >
           <img src={arrow_left_icon} alt="" className="h-5 object-contain" />
           <p>Back</p>
-        </button>
+        </Link>
       </Container>
     </main>
   );
@@ -58,28 +59,30 @@ function Block({ photo, heading, name, distance, type = 1, onAction }) {
         <img src={photo} alt="" className="h-12 w-12 object-contain" />
       </div>
       <h3 className="font-semibold text-2xl lg:text-4xl">{heading}</h3>
-      <div className="flex flex-col gap-6 mt-auto">
+      <div className="flex flex-col gap-6 mt-auto items-stretch max-w-[330px] w-full">
         <button
           style={{ fontFamily: "Prompt" }}
           className={
-            "w-[330px] hidden md:flex justify-between px-4 py-2 border-[1.5px] border-blue-500 rounded-lg bg-white text-black shadow-customBlue"
+            "flex justify-between px-4 py-2 border-[1.5px] border-blue-500 rounded-lg bg-white text-black shadow-customBlue"
           }
         >
           <h4 className={"font-normal text-sm md:text-base"}>{name}</h4>
           <h6 className="hidden md:block ps-1 border-l-[1px] border-[#D9D9D9]">
-            {distance} <span className="text-[grey]">km</span>
+            <input defaultValue={distance} size={1} className="outline-none" />
+            <span className="text-[grey]">km</span>
           </h6>
         </button>
         <CleaningDropdown type={2} onDropChange={onAction} />
-        <div className="hidden lg:flex justify-center">
-          <button
+        <div className="flex justify-center">
+          <Link
+            to="/eight"
             className={
-              "w-fit font-medium px-1 py-[0.5px] border-[1px] rounded-md bg-[#F0F2F5] text-center " +
+              "w-fit font-medium px-4 py-2 rounded-md bg-blue-500 text-white text-center  " +
               textColor
             }
           >
             Search
-          </button>
+          </Link>
         </div>
       </div>
     </div>
